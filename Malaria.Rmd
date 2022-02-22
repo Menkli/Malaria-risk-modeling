@@ -1,0 +1,290 @@
+---
+title: "Malaria"
+author: "Linda Menk"
+date: "10 2 2022"
+output: html_document
+---
+
+Workplan Linda Menk
+
+# Aim and problem statement  
+
+# Literature review  
+
+## Review  
+
+[Spatial and spatio-temporal methods for mapping malaria risk: A systematic review](https://gh.bmj.com/content/5/10/e002919.abstract)  
+
+**Background**  
+Approaches in malaria risk mapping continue to advance in scope with the advent of geostatistical techniques spanning both the spatial and temporal domains. A substantive review of the merits of the methods and covariates used to map malaria risk has not been undertaken. Therefore, this review aimed to systematically retrieve, summarise methods and examine covariates that have been used for mapping malaria risk in sub-Saharan Africa (SSA). 
+
+**Methods**  
+A systematic search of malaria risk mapping studies was conducted using PubMed, EBSCOhost, Web of Science and Scopus databases. The search was restricted to refereed studies published in English from January 1968 to April 2020. To ensure completeness, a manual search through the reference lists of selected studies was also undertaken. Two independent reviewers completed each of the review phases namely: identification of relevant studies based on the Preferred Reporting Items for Systematic Reviews and Meta-Analyses guidelines, data extraction and methodological quality assessment using a validated scoring criterion.  
+
+**Results**  
+One hundred and seven studies met the inclusion criteria. The median quality score across studies was 12/16 (range: 7-16). Approximately half (44%) of the studies employed variable selection techniques prior to mapping with rainfall and temperature selected in over 50% of the studies. Malaria incidence (47%) and prevalence (35%) were the most commonly mapped outcomes, with **Bayesian geostatistical models** often (31%) the preferred approach to risk mapping. Additionally, 29% of the studies employed various **spatial clustering** methods to explore the geographical variation of malaria patterns, with **Kulldorf scan statistic** being the most common. Model validation was specified in 53 (50%) studies, with **partitioning data into training and validation** sets being the common approach.  
+
+**Conclusions**  
+Our review highlights the methodological diversity prominent in malaria risk mapping across SSA. To ensure reproducibility and quality science, best practices and transparent approaches should be adopted when selecting the statistical framework and covariates for malaria risk mapping. Findings underscore the need to periodically assess methods and covariates used in malaria risk mapping; to accommodate changes in data availability, data quality and innovation in statistical methodology.
+
+## Spatial modeling approaches  
+
+[Modelling and mapping the intra-urban spatial distribution of Plasmodium falciparum parasite rate using very-high-resolution satellite derived indicators](https://ij-healthgeographics.biomedcentral.com/articles/10.1186/s12942-020-00232-2)  
+
+**Background**  
+The rapid and often uncontrolled rural-urban migration in Sub-Saharan Africa is transforming urban landscapes expected to provide shelter for more than 50% of Africa's population by 2030. Consequently, the burden of malaria is increasingly affecting the urban population, while socio-economic inequalities within the urban settings are intensified. Few studies, relying mostly on moderate to high resolution datasets and standard predictive variables such as building and vegetation density, have tackled the topic of modeling intra-urban malaria at the city extent. In this research, we investigate the contribution of very-high-resolution satellite-derived land-use, land-cover and population information for modeling the spatial distribution of urban malaria prevalence across large spatial extents. As case studies, we apply our methods to two Sub-Saharan African cities, Kampala and Dar es Salaam.  
+
+**Methods**  
+Openly accessible land-cover, land-use, population and OpenStreetMap data were employed to spatially model Plasmodium falciparum parasite rate standardized to the age group 2-10 years (PfPR2-10) in the two cities through the use of a Random Forest (RF) regressor. The RF models integrated physical and socio-economic information to predict PfPR2-10 across the urban landscape. Intra-urban population distribution maps were used to adjust the estimates according to the underlying population.  
+
+**Results**  
+The results suggest that the spatial distribution of PfPR2-10 in both cities is diverse and highly variable across the urban fabric. Dense informal settlements exhibit a positive relationship with PfPR2-10 and hotspots of malaria prevalence were found near suitable vector breeding sites such as wetlands, marshes and riparian vegetation. In both cities, there is a clear separation of higher risk in informal settlements and lower risk in the more affluent neighborhoods. Additionally, areas associated with urban agriculture exhibit higher malaria prevalence values.  
+
+**Conclusions**  
+The outcome of this research highlights that populations living in informal settlements show higher malaria prevalence compared to those in planned residential neighborhoods. This is due to (i) increased human exposure to vectors, (ii) increased vector density and (iii) a reduced capacity to cope with malaria burden. Since informal settlements are rapidly expanding every year and often house large parts of the urban population, this emphasizes the need for systematic and consistent malaria surveys in such areas. Finally, this study demonstrates the importance of remote sensing as an epidemiological tool for mapping urban malaria variations at large spatial extents, and for promoting evidence-based policy making and control efforts.
+
+[Remote sensing of environmental risk factors for malaria in different geographic contexts](https://link.springer.com/article/10.1186/s12942-021-00282-0)  
+
+**Background**  
+Despite global intervention efforts, malaria remains a major public health concern in many parts of the world. Understanding geographic variation in malaria patterns and their environmental determinants can support targeting of malaria control and development of elimination strategies.  
+
+**Methods**  
+We used remotely sensed environmental data to analyze the influences of environmental risk factors on malaria cases caused by Plasmodium falciparum and Plasmodium vivax from 2014 to 2017 in two geographic settings in Ethiopia. Geospatial datasets were derived from multiple sources and characterized **climate, vegetation, land use, topography, and surface water**. All data were summarized annually at the sub-district (kebele) level for each of the two study areas. We analyzed the associations between environmental data and malaria cases with **Boosted Regression Tree (BRT) models**.  
+
+**Results** 
+We found considerable spatial variation in malaria occurrence. Spectral indices related to land cover greenness (NDVI) and moisture (NDWI) showed negative associations with malaria, as the highest malaria rates were found in landscapes with low vegetation cover and moisture during the months that follow the rainy season. Climatic factors, including precipitation and land surface temperature, had positive associations with malaria. Settlement structure also played an important role, with different effects in the two study areas. Variables related to surface water, such as irrigated agriculture, wetlands, seasonally flooded waterbodies, and height above nearest drainage did not have strong influences on malaria.  
+
+**Conclusion**
+We found different relationships between malaria and environmental conditions in two geographically distinctive areas. These results emphasize that studies of malaria-environmental relationships and predictive models of malaria occurrence should be context specific to account for such differences.
+
+[A genetic algorithm for identifying spatially-varying environmental drivers in a malaria time series model](https://www.sciencedirect.com/science/article/pii/S136481521930129X)  
+
+Time series models of malaria cases can be applied to forecast epidemics and support proactive interventions. Mosquito life history and parasite development are sensitive to environmental factors such as temperature and precipitation, and these variables are often used as predictors in malaria models. However, malaria-environment relationships can vary with ecological and social context. We used a **genetic algorithm** to optimize a spatiotemporal malaria model by **aggregating locations into clusters with similar environmental sensitivities**. We tested the algorithm in the Amhara Region of Ethiopia using seven years of weekly Plasmodium falciparum data from 47 districts and remotely-sensed **land surface temperature, precipitation, and spectral indices as predictors**. The best model identified six clusters, and the districts in each cluster had distinctive responses to the environmental predictors. We conclude that spatial stratification can improve the fit of environmentally-driven disease models, and genetic algorithms provide a practical and effective approach for identifying these clusters.  
+
+## Remote Sensing  
+[Satellite observations and malaria: new opportunities for research and applications](https://www.sciencedirect.com/science/article/pii/S1471492221000556)
+
+Satellite remote sensing provides a wealth of information about environmental factors that influence malaria transmission cycles and human populations at risk. Long-term observations facilitate analysis of climate–malaria relationships, and high-resolution data can be used to assess the effects of agriculture, urbanization, deforestation, and water management on malaria. New sources of very-high-resolution satellite imagery and synthetic aperture radar data will increase the precision and frequency of observations. Cloud computing platforms for remote sensing data combined with analysis-ready datasets and high-level data products have made satellite remote sensing more accessible to nonspecialists. Further collaboration between the malaria and remote sensing communities is needed to develop and implement useful geospatial data products that will support global efforts toward malaria control, elimination, and eradication.  
+
+Long-term satellite records supply data on environmental variables that influence malaria transmission cycles.  
+
+High-resolution land use and land cover maps from satellite observations provide information about human activities that affect mosquito habitats and exposure to mosquito bites.  
+
+New sources of very-high-resolution satellite data create opportunities for precise, localized mapping of mosquito habitat and human settlements.  
+
+Global availability of free synthetic aperture radar data facilitates mapping of buildings, water, and land use in cloudy conditions that are characteristic of many tropical regions.  
+
+New cloud-based technologies for remote sensing data access, processing, and analysis are lowering the barriers to data use for malaria applications.  
+
+## Projects and Institutions  
+- Remote Sensing for Epidemiology for Sub-Saharan African Cities [REACT](https://react.ulb.be/team)  
+- Knowledge and Hospitality for a Sustainable World [KIT - Royal Tropical Institute](kit.nl)  
+- Satellite Images and information products [Satellogic](Satellogic.com)
+- London School of Hygiene and tropical medicine [Malaria centre](https://www.lshtm.ac.uk/research/centres/malaria-centre)
+
+# Indicators  
+## NDVI/NDMI  
+
+**Vegetation greenness and surface moisture: MODIS Nadir BRDF-Adjusted** [MCD43A4](https://cmr.earthdata.nasa.gov/search/concepts/C1620282572-LPDAAC_ECS.html)  
+"Indices were derived from daily 500 m spatial resolution reflectance data. We applied a data quality filter using the BRDF/Albedo quality product (MCD43A2) and only included observations that were flagged as land and were “good” or “best” quality. We then calculated the Normalized Difference Vegetation Index (NDVI), as well as a Normalized Difference Moisture Index (NDMI)" (McMahon)
+
+## Temperature  
+
+**MODIS Terra Land Surface Temperature and Emissivity Product** [MOD11A2](https://cmr.earthdata.nasa.gov/search/concepts/C194001212-LPDAAC_ECS.html)  
+"These data have a spatial resolution of 1 km and are provided as 8-day composites. We used daytime observations to reduce the problem of missing data from nighttime clouds. Data were filtered using the quality assurance flags to only include observations with an average LST error of below 2 °K. Temperature values were then converted to °C." (McMahon)    
+
+## Rainfall/Humidity  
+
+**Integrated Multi-satellitE Retrievals for Global Precipitation Measurement product** [IMERG](https://journals.ametsoc.org/view/journals/hydr/8/1/jhm560_1.xml?tab_body=fulltext-display)  
+"IMERG has a spatial resolution of 0.1° (~ 11 km) and a temporal resolution of 30 min.  
+The dynamic variables for land surface temperature, spectral indices, and precipitation were summarized for each kebele and for each season of the year: dry season (January–April), rainy season (May–August), and the transition season (September–December). For each kebele we then calculated the mean seasonal value of each dynamic variable for each year." (McMahon)   
+
+## Settlement density  
+
+[PlanetScope](https://developers.planet.com/docs/apis/data/)  
+"We created two settlement density indices from 3 m spatial resolution imagery. We acquired images from November 2016 and classified each tile into building and non-building areas with a Random Forest model using a bag fraction of 0.67 over 500 classification trees. Training data consisted of sampling 7500 points collected from 2000 manually digitized polygons in each study area. The overall accuracy of the building classification based on out-of-bag data was 0.98 for both areas. In Mecha and Bahir Dar Zuria we reached a sensitivity of 0.97 and a specificity of 0.98. In Aneded and Awabel sensitivity and specificity were both 0.98. To create variables for settlement density, we resampled the classification to 100 m pixels via a majority filter and then applied a Kernel density estimator using a gaussian kernel with a radius of 100 m and a sigma of 50 m. For each kebele we summarized the mean and maximum settlement density. Settlement classification and density estimation were performed in Google Earth Engine." (McMahon)
+
+## Distance to waterbodies  
+
+"Because distance to potential breeding habitat has been identified as risk factor for anopheline mosquito abundance [68], we mapped seasonally flooded areas. We used **30 m Landsat 8 Operational Land Imager (OLI)** imagery for the dry season and the rainy season of each year. We removed pixels that were flagged as cloud or cloud shadow and calculated the **Normalized Difference Water Index (NDWI)** for each Landsat scene. To identify seasonally flooded areas, we extracted areas where the median NDWI during the end of the wet season (September–October) was above zero and the median NDWI during the dry season (January–April) was below zero. We then calculated the distance of each pixel to the nearest seasonally flooded pixel, expressed as cumulative cost distance of the shortest path measured in meters from the neatest water source. This was done for each year separately to account for inter-annual variation in flooding extents. Additionally, we added “year” as a continuous variable, to capture inter-annual trends of malaria proportion that are not related to environmental conditions."(McMahon)
+
+## El Nino/ENSO  
+
+## Other  
+### Height above nearest drainage (HAND)  
+"To map areas that are likely to be flooded during larger rain events, we calculated the height above nearest drainage (HAND). The height above nearest drainage measures the vertical distance between a given point and the nearest stream. Low values indicate floodplains and other low-lying areas that are likely to be inundated during and after the rainy season when flow rates are high. We used topographic and stream network data to calculate the HAND using Topography Tools for ArcGIS. We then identified areas less than 2 m above the nearest drainage and calculated the proportion of each kebele that falls into this category." (McMahon)
+
+# Data access 
+
+- How to work with MODIS in R: [https://www.earthdatascience.org/courses/earth-analytics/multispectral-remote-sensing-modis/modis-data-in-R/](https://www.earthdatascience.org/courses/earth-analytics/multispectral-remote-sensing-modis/modis-data-in-R/)  
+
+## NDVI  
+## Temperature  
+## Rainfall/Humidity  
+## Settlement density  
+## Distance to waterbodies  
+## El Nino/ENSO  
+
+# Data quality  
+
+# Data engineering  
+
+# Variable selection  
+
+# Model selection  
+According to [Odhiambo (2020)](https://gh.bmj.com/content/5/10/e002919.abstract)'s review paper, Bayesian Geostatistical models are often the preferred approach to risk mapping. 
+
+# Regionalization  
+
+The R package [SpatialEpi](https://cran.r-project.org/web/packages/SpatialEpi/SpatialEpi.pdf) offers a range of methods like Bayes and Kulldorff clustering etc. According to [Odhiambo (2020)](https://gh.bmj.com/content/5/10/e002919.abstract) and [Wakefield and Kim (2013)](https://academic.oup.com/biostatistics/article/14/4/752/368571?login=true) many spatial and spatio-temporal approaches to Malaria mapping use Kulldorffs Scan Statistics as a regionalization technique. Kulldorff also developed the [SatScan Software](https://www.satscan.org/), used in epidemiology to investigate space-time statistics.  
+
+**Kulldorff Scan Statistics**  
+[Kulldorff spatial cluster](https://www.tandfonline.com/doi/pdf/10.1080/03610929708831995?needAccess=true) detection method for a study region with n areas. The method constructs zones by consecutively aggregating nearest-neighboring areas until a proportion of the total study population is included. Given the observed number of cases, the likelihood of each zone is computed using either binomial or poisson likelihoods. The procedure reports the zone that is the most likely cluster and generates significance measures via Monte Carlo sampling. Further, secondary clusters, whose Monte Carlo p-values are below the α-threshold, are reported as well.
+
+**Clusterin similar spatial patterns**  
+The motiv package is described [here](https://link.springer.com/article/10.1007/s10980-020-01135-0), with examples [here](https://jakubnowosad.com/posts).
+
+```{r, eval = FALSE, echo = FALSE, message = FALSE}
+library(motif)
+library(sf)
+library(stars)
+library(tmap)
+library(dplyr)
+library(readr)
+
+# Download data
+library(osfr)
+dir.create("data")
+osf_retrieve_node("xykzv") %>%
+        osf_ls_files(n_max = Inf) %>%
+        osf_download(path = "data",
+                     conflicts = "overwrite")
+
+
+# Load data 
+lc = read_stars("data/land_cover.tif")
+lf = read_stars("data/landform.tif")
+
+
+# Read the color palettes for map styling
+lc_palette_df = read_csv("data/lc_palette.csv")
+lf_palette_df = read_csv("data/lf_palette.csv")
+names(lc_palette_df$color) = lc_palette_df$value
+names(lf_palette_df$color) = lf_palette_df$value
+
+# Visualize maps with tmap
+
+tm_lc = tm_shape(lc) +
+        tm_raster(style = "cat",
+                  palette = lc_palette_df$color,
+                  labels = lc_palette_df$label,
+                  title = "Land cover:") +
+        tm_layout(legend.position = c("LEFT", "BOTTOM"))
+tm_lc
+
+
+
+tm_lf = tm_shape(lf) +
+        tm_raster(style = "cat",
+                  palette = lf_palette_df$color,
+                  labels = lf_palette_df$label,
+                  title = "Landform:") +
+        tm_layout(legend.outside = TRUE)
+tm_lf
+
+
+# Combine the two datasets
+
+eco_data = c(lc, lf)
+
+# Clustering spatial patterns by calculating a spatial signature for each window (batches of 300 grid cells)
+# (Could take some time)
+
+eco_signature = lsp_signature(eco_data,
+                              type = "incove",
+                              window = 300)
+
+
+# Define what distance measure should be used. Distance measures come from the {philentropy} package, featuring 46 distance/similarity measures.
+eco_dist = lsp_to_dist(eco_signature, dist_fun = "jensen-shannon")
+class(eco_dist)
+
+# Perform hierachical clustering. Aim is to minimize within cluster variance
+
+eco_hclust = hclust(eco_dist, method = "ward.D2")
+plot(eco_hclust)
+
+# Define the number of clusters and cut
+
+clusters = cutree(eco_hclust, k = 8)
+
+# Add a column with cluster number to each area and convert to sf object
+eco_grid_sf = lsp_add_clusters(eco_signature,
+                               clusters)
+
+
+# Show map of clusters
+
+tm_clu = tm_shape(eco_grid_sf) +
+        tm_polygons("clust", style = "cat", palette = "Set2", title = "Cluster:") +
+        tm_layout(legend.position = c("LEFT", "BOTTOM"))
+tm_clu
+
+
+# Merge cells that are within the same cluster 
+
+eco_grid_sf2 = eco_grid_sf %>%
+        dplyr::group_by(clust) %>%
+        dplyr::summarize()
+
+
+
+# Show maps
+tm_shape(eco_data) +
+                tm_raster(style = "cat",
+                          palette = list(lc_palette_df$color, lf_palette_df$color)) +
+  tm_facets(ncol = 2) +
+  tm_shape(eco_grid_sf2) +
+  tm_borders(col = "black") +
+  tm_layout(legend.show = FALSE, 
+            title.position = c("LEFT", "TOP"))
+
+
+# Check inhomogenity, distinction and quality
+eco_grid_sfq = lsp_add_quality(eco_grid_sf, eco_dist, type = "cluster")
+
+# Show quality statistics in table
+eco_grid_sfq2 = eco_grid_sfq %>%
+        group_by(clust) %>%
+        summarise(inhomogeneity = mean(inhomogeneity),
+                  distinction = mean(distinction),
+                  quality = mean(quality))
+
+
+eco_grid_sfq2
+
+# Show inhomognity criteria as maps
+
+tm_inh = tm_shape(eco_grid_sfq2) +
+        tm_polygons("inhomogeneity", style = "cont", palette = "magma")
+
+tm_iso = tm_shape(eco_grid_sfq2) +
+        tm_polygons("distinction", style = "cont", palette = "-inferno")
+
+tm_qua = tm_shape(eco_grid_sfq2) +
+        tm_polygons("quality", style = "cont", palette = "Greens")
+
+tm_cluster3 = tmap_arrange(tm_clu, tm_qua, tm_inh, tm_iso, ncol = 2)
+tm_cluster3
+
+
+```
+
+# Clusters and qualitative review  
+
+# Validation  
+
+# Thoughts  
+
+[10.02.22] According to [Craciunescu et al.](https://www.mdpi.com/1099-4300/21/8/784/htm), different factors associated with malaria have different lag times. E.g. for temperature, a lag of 6 month is most meaningful, while for humidity a lag of 4 months is more meaningful. 
+Do the models have ways to include several different optimal lag times?

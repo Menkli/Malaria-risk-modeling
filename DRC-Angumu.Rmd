@@ -1,0 +1,96 @@
+---
+title: "DRC-Angumu"
+author: "Linda Menk"
+date: "21 2 2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## DRC Angumu
+
+
+
+```{r cars, fig.height=12, fig.width=12}
+library(afrihealthsites)
+library(afriadmin)
+library(sf)
+library(dplyr)
+library(ggplot2)
+library(osmdata)
+library(aceld.api)
+
+## WHO database 
+
+# with interactive map
+hsdrc <- afrihealthsites("democratic republic of congo", datasource='who', plot='mapview')
+
+admdrc <- afriadmin("democratic republic of congo", level=2, datasource='geoboundaries')
+
+ituri <- filter(admdrc,shapeName=="Ituri")
+hsituri <- st_crop(hsdrc,ituri)
+
+
+plot_drc <-
+  ggplot() +
+  geom_sf(data = ituri,   color = "green", size = 0.5, alpha = 0.6) +
+  geom_sf(data = hsituri,     fill = "black",  color = "black", alpha = 0.4) 
+  
+plotly::ggplotly(plot_drc)
+
+# Angumu
+
+angumu = getbb("Angumu", featuretype = "boundary", 
+               format_out = "sf_polygon")
+
+plot(angumu)
+
+angumu_opq <- angumu %>% opq()
+# features
+angumu_street <- 
+  angumu_opq %>%
+  add_osm_feature(key = "highway") %>%
+  osmdata_sf()
+  
+angumu_water <- 
+  angumu_opq %>% 
+  add_osm_feature(key = "waterway") %>% 
+  osmdata_sf()
+
+xxx <- filter(angumu_street$osm_lines)
+crop <- st_intersection(angumu, xxx)
+hs_angumu <- st_intersection(angumu, hsdrc)
+river <- filter(angumu_water$osm_lines) %>% 
+  filter(waterway == "river")
+
+stream <- filter(angumu_water$osm_lines) %>% 
+  filter(waterway == "stream")
+
+river_crop <- st_intersection(angumu, river)
+stream_crop <- st_intersection(angumu, stream)
+
+plot_angumu <-
+  ggplot() +
+  geom_sf(data = angumu, color = "red", size = 2) +
+  geom_sf(data = crop) +
+  geom_sf(data = stream_crop, color = "#2792a5") +
+  geom_sf(data = river_crop, color = "blue", size = 1) +
+  geom_sf(data = hs_angumu, color = "yellow", size = 3)
+
+plot(plot_angumu)
+
+# Add aceld.api
+# https://www.rdocumentation.org/packages/acled.api/versions/1.1.5
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
