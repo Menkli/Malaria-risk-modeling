@@ -20,7 +20,7 @@ library(sf)
 library(dplyr)
 library(ggplot2)
 library(osmdata)
-library(aceld.api)
+library(acled.api)
 
 ## WHO database 
 
@@ -84,13 +84,3 @@ plot(plot_angumu)
 # Add aceld.api
 # https://www.rdocumentation.org/packages/acled.api/versions/1.1.5
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

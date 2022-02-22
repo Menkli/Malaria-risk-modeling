@@ -2,7 +2,11 @@
 title: "Malaria"
 author: "Linda Menk"
 date: "10 2 2022"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+    theme: united
 ---
 
 Workplan Linda Menk
@@ -141,8 +145,8 @@ The R package [SpatialEpi](https://cran.r-project.org/web/packages/SpatialEpi/Sp
 **Kulldorff Scan Statistics**  
 [Kulldorff spatial cluster](https://www.tandfonline.com/doi/pdf/10.1080/03610929708831995?needAccess=true) detection method for a study region with n areas. The method constructs zones by consecutively aggregating nearest-neighboring areas until a proportion of the total study population is included. Given the observed number of cases, the likelihood of each zone is computed using either binomial or poisson likelihoods. The procedure reports the zone that is the most likely cluster and generates significance measures via Monte Carlo sampling. Further, secondary clusters, whose Monte Carlo p-values are below the α-threshold, are reported as well.
 
-**Clusterin similar spatial patterns**  
-The motiv package is described [here](https://link.springer.com/article/10.1007/s10980-020-01135-0), with examples [here](https://jakubnowosad.com/posts).
+**Clustering similar spatial patterns**  
+The motif package is described [here](https://link.springer.com/article/10.1007/s10980-020-01135-0), with examples [here](https://jakubnowosad.com/posts).
 
 ```{r, eval = FALSE, echo = FALSE, message = FALSE}
 library(motif)
